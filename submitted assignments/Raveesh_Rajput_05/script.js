@@ -2,6 +2,25 @@ class Invoice extends HTMLElement {
     static observedAttributes = ["config", "data"];
 
     defaultConfig = {
+        "styles": [
+                {
+                    "name": "Page Internal Styles",
+                    "type": "internal",
+                    "style": ".body { background-color:lightblue;}"
+                },
+                {
+                    "name": "Bootstrap",
+                    "type": "external",
+                    "url": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+                },
+                {
+                    "name": "Invoice CSS",
+                    "type": "external",
+                    "url": "./css/style.css"
+                }
+            ],
+        "config": {},
+        "data": {}, // this is default master data i.e. Invoice Title, Date Label
         'wrapper': "invoice-wrapper",
         'invoice_background': "invoice-background",
         'background_img': "background-img",
@@ -58,10 +77,11 @@ class Invoice extends HTMLElement {
         'invoice_terms': 'invoice-terms',
         'invoice_signatures': 'invoice-signatures',
         'invoice_cashier_signature': 'invoice-cashier-signature',
-        'invoice_party_signature': 'invoice-party-signature'
+        'invoice_party_signature': 'invoice-party-signature',
+
     };
 
-    defaultData = {
+    defaultData = { // 
         title: 'TAX INVOICE',
         src: '/img/tata.png',
         company: {
